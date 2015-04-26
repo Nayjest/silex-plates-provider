@@ -1,11 +1,15 @@
 {
-    "name": "rych/silex-plates-provider",
+    "name": "ronanchilvers/silex-plates-provider",
     "description": "Provides Plates template engine to Silex.",
     "license": "MIT",
     "authors": [
         {
             "name": "Ryan Chouinard",
             "email": "rchouinard@gmail.com"
+        },
+        {
+            "name": "Ronan Chilvers",
+            "email": "ronan@thelittledot.com"
         }
     ],
     "minimum-stability": "stable",
