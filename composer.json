@@ -14,10 +14,9 @@
     ],
     "minimum-stability": "stable",
     "require": {
-        "league/plates": "~3@dev"
+        "league/plates": ">1"
     },
     "require-dev": {
-        "silex/silex": ">2@dev",
         "phpunit/phpunit": ">4"
     },
     "autoload": {
