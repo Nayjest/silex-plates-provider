@@ -16,11 +16,9 @@ class SecurityExtension implements ExtensionInterface
         $this->context = $context;
     }
 
-    public function getFunctions()
+    public function register(Engine $engine)
     {
-        return array (
-            'is_granted' => 'getIsGranted',
-        );
+        $engine->registerFunction('is_granted', [ $this, 'getIsGranted' ]);
     }
 
     public function getIsGranted($role, $object = null, $field = null)

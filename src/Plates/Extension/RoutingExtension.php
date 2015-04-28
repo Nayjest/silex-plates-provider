@@ -2,6 +2,7 @@
 
 namespace Rych\Plates\Extension;
 
+use League\Plates\Engine;
 use League\Plates\Extension\ExtensionInterface;
 use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 
@@ -15,12 +16,10 @@ class RoutingExtension implements ExtensionInterface
         $this->generator = $generator;
     }
 
-    public function getFunctions()
+    public function register(Engine $engine)
     {
-        return array (
-            'url' => 'getUrl',
-            'path' => 'getPath',
-        );
+        $engine->registerFunction('url', [$this, 'getUrl']);
+        $engine->registerFunction('path', [$this, 'getPath']);
     }
 
     public function getUrl($name, $parameters = array (), $schemeRelative = false)
