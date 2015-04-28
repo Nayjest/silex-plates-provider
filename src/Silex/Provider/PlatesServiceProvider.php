@@ -33,15 +33,11 @@ class PlatesServiceProvider implements ServiceProviderInterface
         });
 
         $app['plates'] = $app->share(function ($app) {
-            return $app['plates.engine'];
+            $plates = $app['plates.engine'];
+            $plates->app = $app;
+
+            return $plates;
         });
-
-        // $app['plates'] = $app->share(function ($app) {
-        //     $plates = new \League\Plates\Template\Template($app['plates.engine']);
-        //     $plates->app = $app;
-
-        //     return $plates;
-        // });
     }
 
     public function boot(Application $app)
