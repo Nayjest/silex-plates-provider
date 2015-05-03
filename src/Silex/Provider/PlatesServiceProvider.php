@@ -12,11 +12,15 @@ class PlatesServiceProvider implements ServiceProviderInterface
 
     public function register(Application $app)
     {
-        $app['plates.path'] = null;
-        $app['plates.folders'] = array ();
+        $app['plates.path']      = null;
+        $app['plates.extension'] = 'php';
+        $app['plates.folders']   = array();
 
         $app['plates.engine'] = $app->share(function ($app) {
-            $engine = new \League\Plates\Engine($app['plates.path']);
+            $engine = new \League\Plates\Engine(
+                $app['plates.path'],
+                $app['plates.extension']
+            );
             foreach ($app['plates.folders'] as $name => $path) {
                 $engine->addFolder($name, $path);
             }
