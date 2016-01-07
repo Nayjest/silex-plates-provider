@@ -2,10 +2,10 @@
 
 namespace Rych\Silex\Provider;
 
-use Silex\Application;
-use Silex\ServiceProviderInterface;
 use Rych\Plates\Extension\RoutingExtension;
 use Rych\Plates\Extension\SecurityExtension;
+use Silex\Application;
+use Silex\ServiceProviderInterface;
 
 class PlatesServiceProvider implements ServiceProviderInterface
 {
@@ -49,6 +49,5 @@ class PlatesServiceProvider implements ServiceProviderInterface
     public function boot(Application $app)
     {
     }
-
 }
 
