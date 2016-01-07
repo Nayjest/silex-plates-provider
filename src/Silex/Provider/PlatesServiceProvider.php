@@ -3,6 +3,7 @@
 namespace Rych\Silex\Provider;
 
 use Rych\Plates\Extension\RoutingExtension;
+use Rych\Plates\Extension\SectionExtension;
 use Rych\Plates\Extension\SecurityExtension;
 use Silex\Application;
 use Silex\ServiceProviderInterface;
@@ -32,6 +33,8 @@ class PlatesServiceProvider implements ServiceProviderInterface
             if (isset($app['security'])) {
                 $engine->loadExtension(new SecurityExtension($app['security']));
             }
+
+            $engine->loadExtension(new SectionExtension());
 
             return $engine;
         });
