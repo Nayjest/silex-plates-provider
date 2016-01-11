@@ -27,17 +27,17 @@ trait PlatesTrait
      */
     public function render($view, array $parameters = array(), Response $response = null)
     {
-        $twig = $this['plates'];
+        $plates = $this['plates'];
 
         if ($response instanceof StreamedResponse) {
-            $response->setCallback(function () use ($twig, $view, $parameters) {
-                $twig->display($view, $parameters);
+            $response->setCallback(function () use ($plates, $view, $parameters) {
+                $plates->display($view, $parameters);
             });
         } else {
             if (null === $response) {
                 $response = new Response();
             }
-            $response->setContent($twig->render($view, $parameters));
+            $response->setContent($plates->render($view, $parameters));
         }
 
         return $response;
