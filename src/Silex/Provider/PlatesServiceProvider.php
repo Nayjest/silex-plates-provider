@@ -45,9 +45,5 @@ class PlatesServiceProvider implements ServiceProviderInterface
             return $plates;
         };
     }
-
-    public function boot(Application $app)
-    {
-    }
 }
 
