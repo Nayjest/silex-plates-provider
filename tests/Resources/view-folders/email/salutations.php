@@ -1,1 +1,1 @@
-Dear <?=$this->name?>,
+Dear <?= $name ?>,

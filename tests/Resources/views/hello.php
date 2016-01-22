@@ -1,1 +1,1 @@
-Hello <?=$this->name?>!
+Hello <?=$name?>!
