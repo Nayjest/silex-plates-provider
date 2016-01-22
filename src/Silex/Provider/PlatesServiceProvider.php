@@ -2,6 +2,7 @@
 
 namespace Rych\Silex\Provider;
 
+use Pimple\Container;
 use Rych\Plates\Extension\RoutingExtension;
 use Rych\Plates\Extension\SecurityExtension;
 use Silex\Application;
@@ -10,13 +11,13 @@ use Pimple\ServiceProviderInterface;
 class PlatesServiceProvider implements ServiceProviderInterface
 {
 
-    public function register(Application $app)
+    public function register(Container $app)
     {
         $app['plates.path']      = null;
         $app['plates.extension'] = 'php';
         $app['plates.folders']   = array();
 
-        $app['plates.engine'] = $app->share(function ($app) {
+        $app['plates.engine'] = function (Container $app) {
             $engine = new \League\Plates\Engine(
                 $app['plates.path'],
                 $app['plates.extension']
@@ -34,7 +35,7 @@ class PlatesServiceProvider implements ServiceProviderInterface
             }
 
             return $engine;
-        });
+        };
 
         $app['plates'] = function ($app) {
             $plates      = $app['plates.engine'];
