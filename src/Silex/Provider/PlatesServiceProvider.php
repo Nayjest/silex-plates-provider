@@ -5,7 +5,7 @@ namespace Rych\Silex\Provider;
 use Rych\Plates\Extension\RoutingExtension;
 use Rych\Plates\Extension\SecurityExtension;
 use Silex\Application;
-use Silex\ServiceProviderInterface;
+use Pimple\ServiceProviderInterface;
 
 class PlatesServiceProvider implements ServiceProviderInterface
 {
