@@ -1,5 +1,5 @@
 {
-    "name": "rych/silex-plates-provider",
+    "name": "nayjest/silex-plates-provider",
     "description": "Provides Plates template engine to Silex.",
     "license": "MIT",
     "authors": [
